@@ -1,7 +1,7 @@
 {
-  "name": "mupx",
+  "name": "mupx-reaction",
   "version": "1.5.2",
-  "description": "Production Quality Meteor Deployments",
+  "description": "Production Quality Meteor Deployments for reaction commerce",
   "dependencies": {
     "async": "^0.9.0",
     "cjson": "0.3.x",
@@ -17,10 +17,10 @@
   "bin": {
     "mupx": "./bin/mup"
   },
-  "author": "Arunoda Susiripala <arunoda.susiripala@gmail.com>",
+  "author": "Carlos Olivera <carlos.olivera.t@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/arunoda/meteor-up.git"
+    "url": "git://github.com/carlos-olivera/mupx-reaction"
   },
   "license": "MIT"
 }
