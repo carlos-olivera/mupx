@@ -15,7 +15,7 @@ docker rm -f $APPNAME-frontend
 
 # We don't need to fail the deployment because of a docker hub downtime
 set +e
-docker pull meteorhacks/meteord:base
+docker pull carlosolivera/reactionmovilgate:v1
 set -e
 
 if [ "$USE_LOCAL_MONGO" == "1" ]; then
@@ -30,7 +30,7 @@ if [ "$USE_LOCAL_MONGO" == "1" ]; then
     --env=MONGO_URL=mongodb://mongodb:27017/$APPNAME \
     --name=$APPNAME \
     <% for (var hosts = Object.keys(customHosts || {}), i = 0, l = hosts.length; i < l; i ++) { %>--add-host=<%= hosts[i] %>:<%= customHosts[hosts[i]] %><%= (i < l - 1 ? " \\\n    " : "") %><% } %> \
-    meteorhacks/meteord:base
+    carlosolivera/reactionmovilgate:v1
 else
   docker run \
     -d \
@@ -41,7 +41,7 @@ else
     --env-file=$ENV_FILE \
     --name=$APPNAME \
     <% for (var hosts = Object.keys(customHosts || {}), i = 0, l = hosts.length; i < l; i ++) { %>--add-host=<%= hosts[i] %>:<%= customHosts[hosts[i]] %><%= (i < l - 1 ? " \\\n    " : "") %><% } %> \
-    meteorhacks/meteord:base
+    carlosolivera/reactionmovilgate:v1
 fi
 
 <% if(typeof sslConfig === "object")  { %>
@@ -57,5 +57,5 @@ fi
     --link=$APPNAME:backend \
     --publish=<%= sslConfig.port %>:443 \
     --name=$APPNAME-frontend \
-    meteorhacks/mup-frontend-server /start.sh
+    carlosolivera/mup-frontend-server /start.sh
 <% } %>
