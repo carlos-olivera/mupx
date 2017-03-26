@@ -56,7 +56,7 @@ fi
     --volume=/opt/$APPNAME/config/private.key:/private.key \
     --link=$APPNAME:backend \
     --publish=<%= sslConfig.port %>:443 \
-    --publish=80:80
+    --publish=80:80 \
     --name=$APPNAME-frontend \
     carlosolivera/mup-frontend-server /start.sh
 <% } %>
